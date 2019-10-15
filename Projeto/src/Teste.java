@@ -4,4 +4,5 @@ public class Teste {
 	//fuck you bitch
 	
 //VOCES SAO OS MAIORES MEUS BOYZZZ
+	//yoyo como e q e? ta tdo em ordem?
 }
