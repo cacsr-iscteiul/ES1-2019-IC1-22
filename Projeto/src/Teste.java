@@ -9,4 +9,5 @@ public class Teste {
 	//ta tudo em ordem?
 	
 	// Quando quiseres trrabalhar e para de fingires que tens erros diz ANDRE
+	//ola tod bem
 }
