@@ -8,6 +8,4 @@ public class Teste {
 	//OLA SOU A MARTXICAS
 	//ta tudo em ordem?
 	
-	// Quando quiseres trrabalhar e parar de fingires que tens erros diz ANDRE
-	//ola tod bem
 }
