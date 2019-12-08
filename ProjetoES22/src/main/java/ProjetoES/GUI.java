@@ -75,18 +75,18 @@ public class GUI {
 		gbc_btnMostrarExcel.insets = new Insets(0, 0, 5, 5);
 		gbc_btnMostrarExcel.gridx = 4;
 		gbc_btnMostrarExcel.gridy = 1;
-		//btnMostrarExcel.addActionListener(new ActionListener() {
-		//	public void actionPerformed(ActionEvent arg0) {
-			//	try {
-			//		Excel excel = new Excel();
-			//		 excel.readexcel();
-		//		} catch (IOException e1) {
+		btnMostrarExcel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					Excel excel = new Excel();
+					 excel.readexcel();
+			} catch (IOException e1) {
 					// TODO Auto-generated catch block
-		//			e1.printStackTrace();
-		//		}
-			
-	//		}
-	//	});
+				e1.printStackTrace();
+			}
+		
+		}
+		});
 		frame.getContentPane().add(btnMostrarExcel, gbc_btnMostrarExcel);
 		
 		JComboBox Metrica = new JComboBox();
@@ -140,7 +140,7 @@ public class GUI {
 		gbc_comboBox_3.gridx = 3;
 		gbc_comboBox_3.gridy = 7;
 		frame.getContentPane().add(comboBox_3, gbc_comboBox_3);
-		
+		 
 		textField_1 = new JTextField();
 		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
 		gbc_textField_1.insets = new Insets(0, 0, 5, 5);
