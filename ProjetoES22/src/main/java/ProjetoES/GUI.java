@@ -132,7 +132,7 @@ public class GUI {
 		gbc_comboBox_2.gridx = 1;
 		gbc_comboBox_2.gridy = 7;
 		frame.getContentPane().add(comboBox_2, gbc_comboBox_2);
-		
+		 
 		JComboBox comboBox_3 = new JComboBox();
 		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"Comparador", ">", "<", ">=", "<="}));
 		GridBagConstraints gbc_comboBox_3 = new GridBagConstraints();
