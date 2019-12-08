@@ -12,7 +12,6 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.DefaultComboBoxModel;
@@ -125,7 +124,7 @@ public class GUI {
 		frame.getContentPane().add(comboBox_1, gbc_comboBox_1);
 		
 		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Metrica", ">", "<", ">=", "<="}));
+		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Metrica"}));
 		GridBagConstraints gbc_comboBox_2 = new GridBagConstraints();
 		gbc_comboBox_2.fill = GridBagConstraints.HORIZONTAL;
 		gbc_comboBox_2.insets = new Insets(0, 0, 5, 5);
