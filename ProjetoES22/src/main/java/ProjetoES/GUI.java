@@ -62,7 +62,7 @@ public class GUI {
 		gridBagLayout.rowWeights = new double[]{1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
 		frame.getContentPane().setLayout(gridBagLayout);
 		
-		JLabel lblQualidadeDeDeteo = new JLabel("Qualidade de Dete\u00E7\u00E3o de Erros");
+		JLabel lblQualidadeDeDeteo = new JLabel("Qualidade de Deteção de Erros");
 		lblQualidadeDeDeteo.setForeground(Color.BLUE);
 		GridBagConstraints gbc_lblQualidadeDeDeteo = new GridBagConstraints();
 		gbc_lblQualidadeDeDeteo.insets = new Insets(0, 0, 5, 5);
