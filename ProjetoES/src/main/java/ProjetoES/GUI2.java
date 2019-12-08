@@ -156,5 +156,7 @@ public class GUI2 {
 		frame.getContentPane().add(btnAvaliarQualidasw, gbc_btnAvaliarQualidasw);
 	}
 
+	
+	//this is laura
 }
 
