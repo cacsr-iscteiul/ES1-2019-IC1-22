@@ -17,6 +17,7 @@ public class Excel {
 	int linha = 0;
 	int coluna=0;
 	static List<Operacoes> operacoes;
+
 	
 
 	public Excel() {
@@ -24,8 +25,8 @@ public class Excel {
 	}
 	
 	
-	public List<Operacoes> readexcel() throws IOException {
-	
+	//public List<Operacoes> readexcel() throws IOException {
+	public void readexcel() throws IOException {
 		FileInputStream file = new FileInputStream(new File("Long-Method.xlsx"));
 		  
         //Create Workbook instance holding reference to .xlsx file
@@ -53,9 +54,13 @@ public class Excel {
                     case Cell.CELL_TYPE_NUMERIC:
                         System.out.print(cell.getNumericCellValue() + "    ");
                         break;
+                    case Cell.CELL_TYPE_BOOLEAN:
+                    	System.out.println(cell.getBooleanCellValue() + "    ");
+                    	break;
                     case Cell.CELL_TYPE_STRING:
                         System.out.print(cell.getStringCellValue() + "    ");
                         break;
+                    
                 }
             }
             System.out.println(workbook.getNumberOfSheets());
@@ -66,13 +71,13 @@ public class Excel {
 			//}
 			
 			
-			operacoes.add(operacao);
+	//		operacoes.add(operacao);
         }
 			workbook.close();
 			file.close();
 					
 
-		return this.operacoes;
+	//	return this.operacoes;
 	
 	}
 	
