@@ -122,7 +122,7 @@ public class GUI {
 		gbc_comboBox_1.gridx = 3;
 		gbc_comboBox_1.gridy = 5;
 		frame.getContentPane().add(comboBox_1, gbc_comboBox_1);
-		
+		 
 		JComboBox comboBox_2 = new JComboBox();
 		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Metrica"}));
 		GridBagConstraints gbc_comboBox_2 = new GridBagConstraints();
