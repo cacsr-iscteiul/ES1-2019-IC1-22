@@ -37,14 +37,17 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import java.awt.Window.Type;
+import java.awt.Font;
 
 public class GUI {
 
-	private JFrame frame;
-	private final JButton btnAvaliarQualidasw = new JButton("Avaliar Qualidade");
+	private JFrame frmQualidadeDeDeteo;
+	private final JButton btnAvaliarQualidasw = new JButton("Adicionar Regra");
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTable table;
+	private File excel;
 	DefaultTableModel dtm = new DefaultTableModel();  //mudei isto para aqui
 
 	/**
@@ -55,7 +58,7 @@ public class GUI {
 			public void run() {
 				try {
 					GUI window = new GUI();
-					window.frame.setVisible(true);
+					window.frmQualidadeDeDeteo.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -74,15 +77,12 @@ public class GUI {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 894, 567);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-
-		JLabel lblQualidadeDeDeteo = new JLabel("Qualidade de Deteção de Erros");
-		lblQualidadeDeDeteo.setBounds(99, 11, 200, 14);
-		lblQualidadeDeDeteo.setForeground(Color.BLUE);
-		frame.getContentPane().add(lblQualidadeDeDeteo);
+		frmQualidadeDeDeteo = new JFrame();
+		frmQualidadeDeDeteo.setFont(new Font("Algerian", Font.BOLD, 14));
+		frmQualidadeDeDeteo.setTitle("Qualidade de Deteção de Erros\r\n");
+		frmQualidadeDeDeteo.setBounds(100, 100, 894, 567);
+		frmQualidadeDeDeteo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmQualidadeDeDeteo.getContentPane().setLayout(null);
 
 
 		JButton btnMostrarExcel = new JButton("Mostrar Excel");
@@ -94,18 +94,18 @@ public class GUI {
 			//	DefaultTableModel dtm = new DefaultTableModel();
 				if(jff ==JFileChooser.APPROVE_OPTION) {
 					try { 
-						File excel = jf.getSelectedFile();
+						 excel = jf.getSelectedFile();
 						FileInputStream excelFIS = new FileInputStream(excel);
 						BufferedInputStream excelBIS = new BufferedInputStream(excelFIS);
 						XSSFWorkbook excelJTable = new XSSFWorkbook(excelBIS);
 						XSSFSheet excelsh = excelJTable.getSheetAt(0);
 
 						boolean primlinha = true;
-						for(int coluna=0; coluna <= excelsh.getLastRowNum(); coluna++) {
-							XSSFRow colunaexcel = excelsh.getRow(coluna); 
-							XSSFCell[] cell = new XSSFCell[colunaexcel.getLastCellNum()];
-							for(int a = 0; a<colunaexcel.getLastCellNum(); a++) {
-								cell[a] = colunaexcel.getCell(a);
+						for(int linha=0; linha <= excelsh.getLastRowNum(); linha++) {
+							XSSFRow linhaexcel = excelsh.getRow(linha); 
+							XSSFCell[] cell = new XSSFCell[linhaexcel.getLastCellNum()];
+							for(int a = 0; a<linhaexcel.getLastCellNum(); a++) {
+								cell[a] = linhaexcel.getCell(a);
 							}
 							if(primlinha) {
 								dtm.setColumnIdentifiers(cell);
@@ -114,68 +114,60 @@ public class GUI {
 								dtm.addRow(cell);
 					//		System.out.println(cell);
 
-						}
+						} 
 
 
 					}catch (FileNotFoundException e) {
 						JOptionPane.showMessageDialog(null, e.getMessage());
 					} catch (IOException e) {
 						JOptionPane.showMessageDialog(null, e.getMessage());
-					} finally {
-						try {
-							ex.readexcel();
-						} catch (IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}
-
+					} 
 				}}
 		});
-		btnMostrarExcel.setBounds(109, 50, 145, 23);
-		frame.getContentPane().add(btnMostrarExcel);
+		btnMostrarExcel.setBounds(27, 23, 156, 23);
+		frmQualidadeDeDeteo.getContentPane().add(btnMostrarExcel);
 
 		JComboBox Metrica = new JComboBox();
-		Metrica.setBounds(26, 113, 74, 20);
+		Metrica.setBounds(438, 89, 99, 20);
 		Metrica.setModel(new DefaultComboBoxModel(new String[] {"Metrica", "LOC", "CYCLO", "ATFD", "LAA"}));
 		Metrica.setToolTipText("");
-		frame.getContentPane().add(Metrica);
+		frmQualidadeDeDeteo.getContentPane().add(Metrica);
 
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(131, 113, 104, 20);
+		comboBox.setBounds(582, 24, 104, 20);
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Comparador", ">", "<", ">=", "<="}));
-		frame.getContentPane().add(comboBox);
+		frmQualidadeDeDeteo.getContentPane().add(comboBox);
 
 		textField = new JTextField();
-		textField.setBounds(285, 113, 86, 20);
-		frame.getContentPane().add(textField);
+		textField.setBounds(728, 89, 99, 20);
+		frmQualidadeDeDeteo.getContentPane().add(textField);
 		textField.setColumns(10);
 
 		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(131, 196, 104, 20);
+		comboBox_1.setBounds(728, 58, 103, 20);
 		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"And", "Or"}));
-		frame.getContentPane().add(comboBox_1);
+		frmQualidadeDeDeteo.getContentPane().add(comboBox_1);
 
 		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setBounds(26, 280, 74, 20);
+		comboBox_2.setBounds(438, 24, 99, 20);
 		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Metrica", "LOC", "CYCLO", "ATFD", "LAA"}));
-		frame.getContentPane().add(comboBox_2);
+		frmQualidadeDeDeteo.getContentPane().add(comboBox_2);
 
 		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setBounds(131, 280, 104, 20);
+		comboBox_3.setBounds(582, 89, 104, 20);
 		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"Comparador", ">", "<", ">=", "<="}));
-		frame.getContentPane().add(comboBox_3);
+		frmQualidadeDeDeteo.getContentPane().add(comboBox_3);
 
 		textField_1 = new JTextField();
-		textField_1.setBounds(285, 280, 86, 20);
-		frame.getContentPane().add(textField_1);
+		textField_1.setBounds(728, 24, 99, 20);
+		frmQualidadeDeDeteo.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
-		btnAvaliarQualidasw.setBounds(109, 375, 145, 23);
-		frame.getContentPane().add(btnAvaliarQualidasw);
+		btnAvaliarQualidasw.setBounds(582, 142, 145, 23);
+		frmQualidadeDeDeteo.getContentPane().add(btnAvaliarQualidasw);
    
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(395, 11, 473, 506);
-		frame.getContentPane().add(scrollPane);
+		scrollPane.setBounds(10, 176, 858, 341);
+		frmQualidadeDeDeteo.getContentPane().add(scrollPane);
 
 		table = new JTable();
 
@@ -190,6 +182,10 @@ public class GUI {
 //				}
 //				));
 		table.setModel(dtm); // fez me sentido ser assim
+		
+		JButton btnAvaliarQualidadeInicial = new JButton("Avaliar Qualidade Inicial");
+		btnAvaliarQualidadeInicial.setBounds(27, 88, 156, 23);
+		frmQualidadeDeDeteo.getContentPane().add(btnAvaliarQualidadeInicial);
 
 
 	}
