@@ -109,7 +109,7 @@ public class GUI {
 							}
 							if(primlinha) {
 								dtm.setColumnIdentifiers(cell);
-								primlinha=true;
+								primlinha=false;
 							}else
 								dtm.addRow(cell);
 					//		System.out.println(cell);
