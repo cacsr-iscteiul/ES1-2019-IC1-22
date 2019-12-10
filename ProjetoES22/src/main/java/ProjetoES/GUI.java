@@ -74,7 +74,7 @@ public class GUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 776, 567);
+		frame.setBounds(100, 100, 894, 567);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -172,7 +172,7 @@ public class GUI {
 		frame.getContentPane().add(btnAvaliarQualidasw);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(395, 11, 355, 506);
+		scrollPane.setBounds(395, 11, 473, 506);
 		frame.getContentPane().add(scrollPane);
 		
 		table = new JTable();
