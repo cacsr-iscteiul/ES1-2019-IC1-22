@@ -172,7 +172,7 @@ public class GUI {
 		textField_1.setColumns(10);
 		btnAvaliarQualidasw.setBounds(109, 375, 145, 23);
 		frame.getContentPane().add(btnAvaliarQualidasw);
-
+  
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(395, 11, 473, 506);
 		frame.getContentPane().add(scrollPane);
