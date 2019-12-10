@@ -47,7 +47,7 @@ public class Excel {
             while (cellIterator.hasNext()) 
             {
                 Cell cell = cellIterator.next();
-                
+                 
                 //Check the cell type and format accordingly
                 switch (cell.getCellType()) 
                 {

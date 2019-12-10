@@ -92,7 +92,7 @@ public class GUI {
 				int jff = jf.showOpenDialog(jf);
 				DefaultTableModel dtm = new DefaultTableModel();
 				if(jff ==JFileChooser.APPROVE_OPTION) {
-					try {
+					try { 
 						File excel = jf.getSelectedFile();
 						FileInputStream excelFIS = new FileInputStream(excel);
 						BufferedInputStream excelBIS = new BufferedInputStream(excelFIS);
