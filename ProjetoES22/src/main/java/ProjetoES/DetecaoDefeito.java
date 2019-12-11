@@ -31,7 +31,7 @@ public class DetecaoDefeito {
 				vetorExcel[a] = linhaExcel.getCell(4).getNumericCellValue();
 				
 				//LOC
-			
+			 
 				if( regra.getMetricaCima() == Metrica.LOC) {
 				if(regra.getComparadorCima() == Comparador.MAIOR){
 					if(vetorExcel[a] > regra.getValorCima()) {

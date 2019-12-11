@@ -28,7 +28,7 @@ public class Operacoes {
 			Boolean[] vetor2 = new Boolean[excelSheet.getLastRowNum()];
 			Boolean[] vetor3 = new Boolean[excelSheet.getLastRowNum()];
 			int DCI=0;//true true
-			int DII=0;//true false
+			int DII=0;//true false 
 			int ADCI=0;//false false
 			int ADII=0;//false true       plasma,long
 			

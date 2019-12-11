@@ -50,7 +50,7 @@ public class GUI {
 	private JTable table;
 	private File excel;
 	private Regra regra;
-	DefaultTableModel dtm = new DefaultTableModel();  //mudei isto para aqui
+	DefaultTableModel dtm = new DefaultTableModel();  //mudei isto para aqui 
 
 	/**
 	 * Launch the application.

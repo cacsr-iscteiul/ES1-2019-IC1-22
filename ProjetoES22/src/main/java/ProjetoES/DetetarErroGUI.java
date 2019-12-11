@@ -25,7 +25,7 @@ public class DetetarErroGUI {
 					e.printStackTrace();
 				}
 			}
-		});
+		}); 
 	}
 
 	/**

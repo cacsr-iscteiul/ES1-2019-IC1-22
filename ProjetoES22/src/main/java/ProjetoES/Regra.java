@@ -14,7 +14,7 @@ public class Regra {
 	
 public AndOr getAndOr() {
 		return andOr;
-	}
+	} 
 
 	public void setAndOr(AndOr andOr) {
 		this.andOr = andOr;

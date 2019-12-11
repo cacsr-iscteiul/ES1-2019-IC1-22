@@ -17,7 +17,7 @@ public class CompararErroGUI {
 				try { 
 					CompararErroGUI window = new CompararErroGUI();
 					window.frame.setVisible(true);
-				} catch (Exception e) {
+				} catch (Exception e) { 
 					e.printStackTrace();
 				}  
 			}

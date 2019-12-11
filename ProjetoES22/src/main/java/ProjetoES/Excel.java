@@ -21,7 +21,7 @@ public class Excel {
 	
 
 	public Excel() {
-		this.operacoes = new ArrayList<Operacoes>();
+		this.operacoes = new ArrayList<Operacoes>(); 
 	}
 	
 	
