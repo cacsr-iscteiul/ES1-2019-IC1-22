@@ -116,7 +116,7 @@ public class GUI {
 
 						} 
 
-
+						Operacoes.comparador_longMehtod_plasma(excel);
 					}catch (FileNotFoundException e) {
 						JOptionPane.showMessageDialog(null, e.getMessage());
 					} catch (IOException e) {
