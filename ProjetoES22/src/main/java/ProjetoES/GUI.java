@@ -39,6 +39,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.awt.Window.Type;
 import java.awt.Font;
+import java.awt.ScrollPane;
 
 public class GUI {
 
@@ -124,7 +125,7 @@ public class GUI {
 					} 
 				}}
 		});
-		btnMostrarExcel.setBounds(27, 23, 156, 23);
+		btnMostrarExcel.setBounds(27, 23, 167, 23);
 		frmQualidadeDeDeteo.getContentPane().add(btnMostrarExcel);
 
 		JComboBox Metrica = new JComboBox();
@@ -183,9 +184,25 @@ public class GUI {
 //				));
 		table.setModel(dtm); // fez me sentido ser assim
 		
-		JButton btnAvaliarQualidadeInicial = new JButton("Avaliar Qualidade Inicial");
-		btnAvaliarQualidadeInicial.setBounds(27, 88, 156, 23);
+		JButton btnAvaliarQualidadeInicial = new JButton("Detetar Erros");
+		btnAvaliarQualidadeInicial.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				DetetarErro d = new DetetarErro();
+				d.main(null);
+			}
+		});
+		btnAvaliarQualidadeInicial.setBounds(27, 68, 167, 23);
 		frmQualidadeDeDeteo.getContentPane().add(btnAvaliarQualidadeInicial);
+		
+		JButton btnNewButton = new JButton("Comparar erros");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "Regra: " + "  " + "Iplasma: " + "   " + "PMD: \t" + "Regra: " + "  " + "Iplasma: " + "   " + "PMD: \t");
+				
+			}
+		});
+		btnNewButton.setBounds(27, 114, 167, 23);
+		frmQualidadeDeDeteo.getContentPane().add(btnNewButton);
 
 
 	}
