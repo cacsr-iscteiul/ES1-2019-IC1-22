@@ -49,6 +49,7 @@ public class GUI {
 	private JTextField textField_1;
 	private JTable table;
 	private File excel;
+	private Regra regra;
 	DefaultTableModel dtm = new DefaultTableModel();  //mudei isto para aqui
 
 	/**
@@ -128,36 +129,37 @@ public class GUI {
 		btnMostrarExcel.setBounds(27, 23, 167, 23);
 		frmQualidadeDeDeteo.getContentPane().add(btnMostrarExcel);
 
-		JComboBox Metrica = new JComboBox();
-		Metrica.setBounds(438, 89, 99, 20);
-		Metrica.setModel(new DefaultComboBoxModel(new String[] {"Metrica", "LOC", "CYCLO", "ATFD", "LAA"}));
-		Metrica.setToolTipText("");
-		frmQualidadeDeDeteo.getContentPane().add(Metrica);
+		final JComboBox comboBoxMetricaBaixo = new JComboBox();
+		comboBoxMetricaBaixo.setBounds(438, 89, 99, 20);
+		comboBoxMetricaBaixo.setModel(new DefaultComboBoxModel(new String[] {"Metrica", "LOC", "CYCLO", "ATFD", "LAA"}));
+		comboBoxMetricaBaixo.setToolTipText("");
+		frmQualidadeDeDeteo.getContentPane().add(comboBoxMetricaBaixo);
 
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(582, 24, 104, 20);
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Comparador", ">", "<", ">=", "<="}));
-		frmQualidadeDeDeteo.getContentPane().add(comboBox);
+		final JComboBox comboBoxComparador = new JComboBox();
+		comboBoxComparador.setBounds(582, 24, 104, 20);
+		comboBoxComparador.setModel(new DefaultComboBoxModel(new String[] {"Comparador", "IGUAL","MAIOR","MENOR","MAIORouIGUAL","MENORouIGUAL"}));
+		frmQualidadeDeDeteo.getContentPane().add(comboBoxComparador);
+
 
 		textField = new JTextField();
 		textField.setBounds(728, 89, 99, 20);
 		frmQualidadeDeDeteo.getContentPane().add(textField);
 		textField.setColumns(10);
 
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(728, 58, 103, 20);
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"And", "Or"}));
-		frmQualidadeDeDeteo.getContentPane().add(comboBox_1);
+		final JComboBox comboBoxAndOr = new JComboBox();
+		comboBoxAndOr.setBounds(728, 58, 103, 20);
+		comboBoxAndOr.setModel(new DefaultComboBoxModel(new String[] {"And", "Or"}));
+		frmQualidadeDeDeteo.getContentPane().add(comboBoxAndOr);
 
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setBounds(438, 24, 99, 20);
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Metrica", "LOC", "CYCLO", "ATFD", "LAA"}));
-		frmQualidadeDeDeteo.getContentPane().add(comboBox_2);
+		final JComboBox comboBoxMetricaCima = new JComboBox();
+		comboBoxMetricaCima.setBounds(438, 24, 99, 20);
+		comboBoxMetricaCima.setModel(new DefaultComboBoxModel(new String[] {"Metrica", "LOC", "CYCLO", "ATFD", "LAA"}));
+		frmQualidadeDeDeteo.getContentPane().add(comboBoxMetricaCima);
 
-		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setBounds(582, 89, 104, 20);
-		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"Comparador", ">", "<", ">=", "<="}));
-		frmQualidadeDeDeteo.getContentPane().add(comboBox_3);
+		final JComboBox comboBoxComparadorCima = new JComboBox();
+		comboBoxComparadorCima.setBounds(582, 89, 104, 20);
+		comboBoxComparadorCima.setModel(new DefaultComboBoxModel(new String[] {"Comparador", "IGUAL","MAIOR","MENOR","MAIORouIGUAL","MENORouIGUAL"}));
+		frmQualidadeDeDeteo.getContentPane().add(comboBoxComparadorCima);
 
 		textField_1 = new JTextField();
 		textField_1.setBounds(728, 24, 99, 20);
@@ -187,8 +189,10 @@ public class GUI {
 		JButton btnAvaliarQualidadeInicial = new JButton("Detetar Erros");
 		btnAvaliarQualidadeInicial.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				DetetarErro d = new DetetarErro();
+				DetetarErroGUI d = new DetetarErroGUI();
 				d.main(null);
+				DetecaoDefeito d1 = new DetecaoDefeito();
+				d1.detetarDefeito(regra,excel);
 			}
 		});
 		btnAvaliarQualidadeInicial.setBounds(27, 68, 167, 23);
@@ -203,7 +207,30 @@ public class GUI {
 		});
 		btnNewButton.setBounds(27, 114, 167, 23);
 		frmQualidadeDeDeteo.getContentPane().add(btnNewButton);
-
+		
+		btnAvaliarQualidasw.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int valorBaixo = Integer.parseInt(textField.getText());
+				int valorCima = Integer.parseInt(textField_1.getText());
+				System.out.println(valorCima);
+				System.out.println(valorBaixo);
+				String comparadorStringCima = (String)comboBoxComparador.getSelectedItem();
+				String comparadorStringBaixo = (String)comboBoxComparadorCima.getSelectedItem();
+				Comparador comparadorCima = Comparador.valueOf(comparadorStringCima);
+				Comparador comparadorBaixo = Comparador.valueOf(comparadorStringBaixo);
+				System.out.println(comparadorCima);
+				System.out.println(comparadorBaixo);
+				String metricaStringCima = (String)comboBoxMetricaCima.getSelectedItem();
+				String metricaStringBaixo = (String)comboBoxMetricaBaixo.getSelectedItem();
+				Metrica metricaCima = Metrica.valueOf(metricaStringCima);
+				Metrica metricaBaixo = Metrica.valueOf(metricaStringBaixo);
+				System.out.println(metricaCima);
+				System.out.println(metricaBaixo);
+				String AndOrString = (String)comboBoxAndOr.getSelectedItem();
+				AndOr inha =AndOr.valueOf(AndOrString);
+				regra = new Regra(1,comparadorCima,comparadorBaixo,valorCima,valorBaixo,metricaCima,metricaBaixo,inha);
+			}
+		});
 
 	}
 }
