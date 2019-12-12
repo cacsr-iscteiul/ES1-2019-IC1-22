@@ -96,10 +96,10 @@ public class GUI {
 			public void actionPerformed(ActionEvent arg0) {
 				final JFileChooser jf = new JFileChooser();
 				int jff = jf.showOpenDialog(jf);
-			//	DefaultTableModel dtm = new DefaultTableModel();
+				//	DefaultTableModel dtm = new DefaultTableModel();
 				if(jff ==JFileChooser.APPROVE_OPTION) {
 					try { 
-						 excel = jf.getSelectedFile();
+						excel = jf.getSelectedFile();
 						FileInputStream excelFIS = new FileInputStream(excel);
 						BufferedInputStream excelBIS = new BufferedInputStream(excelFIS);
 						XSSFWorkbook excelJTable = new XSSFWorkbook(excelBIS);
@@ -117,7 +117,7 @@ public class GUI {
 								primlinha=false;
 							}else
 								dtm.addRow(cell);
-					//		System.out.println(cell);
+							//		System.out.println(cell);
 
 						} 
 					}catch (FileNotFoundException e) {
@@ -168,7 +168,7 @@ public class GUI {
 		textField_1.setColumns(10);
 		btnAvaliarQualidasw.setBounds(582, 142, 145, 23);
 		frmQualidadeDeDeteo.getContentPane().add(btnAvaliarQualidasw);
-   
+
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 176, 858, 341);
 		frmQualidadeDeDeteo.getContentPane().add(scrollPane);
@@ -177,29 +177,29 @@ public class GUI {
 
 		scrollPane.setViewportView(table);
 
-//		table.setModel(new DefaultTableModel(
-//				new Object[][] {
-//					
-//				},   
-//				new String [] {
-//						
-//				}
-//				));
+		//		table.setModel(new DefaultTableModel(
+		//				new Object[][] {
+		//					
+		//				},   
+		//				new String [] {
+		//						
+		//				}
+		//				));
 		table.setModel(dtm); // fez me sentido ser assim
-		
+
 		JButton btnAvaliarQualidadeInicial = new JButton("Detetar Defeitos");
 		btnAvaliarQualidadeInicial.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				DetetarErroGUI d = new DetetarErroGUI();
-//				d.main(null);
-				 d1 = new DetecaoDefeito();
+				//				DetetarErroGUI d = new DetetarErroGUI();
+				//				d.main(null);
+				d1 = new DetecaoDefeito();
 				d1.detetarDefeito(regra,excel);
 				JOptionPane.showMessageDialog(null, "MetodosID  com defeito:  " + Arrays.toString(d1.getVetorFinal()));
 			}
 		});
 		btnAvaliarQualidadeInicial.setBounds(27, 68, 167, 23);
 		frmQualidadeDeDeteo.getContentPane().add(btnAvaliarQualidadeInicial);
-		
+
 		JButton btnNewButton = new JButton("Comparar Defeitos");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -208,12 +208,12 @@ public class GUI {
 				operacoes.comparador_longMehtod_plasma(excel);
 				operacoes.comparador_longMehtod_PMD(excel);
 				JOptionPane.showMessageDialog(null, "Regra: " +operacoes.getDCI_Regra()+ "  " + "Iplasma: "+operacoes.getDCI_longMehtod_plasma() + "   " + "PMD:"+operacoes.getDCI_longMehtod_PMD() + "Regra: " + "  " + "Iplasma: " + "   " + "PMD: \t");
-				
+
 			}
 		});
 		btnNewButton.setBounds(27, 114, 167, 23);
 		frmQualidadeDeDeteo.getContentPane().add(btnNewButton);
-		
+
 		btnAvaliarQualidasw.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int valorBaixo = Integer.parseInt(textField.getText());

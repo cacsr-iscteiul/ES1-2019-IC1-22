@@ -11,7 +11,7 @@ public class Regra {
 	private Metrica metricaBaixo;
 	private AndOr andOr;
 	
-public AndOr getAndOr() {
+	public AndOr getAndOr() {
 		return andOr;
 	} 
 
