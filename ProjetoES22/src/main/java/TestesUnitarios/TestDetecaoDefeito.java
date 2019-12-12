@@ -1,16 +1,16 @@
 package TestesUnitarios;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import ProjetoES.AndOr;
 import ProjetoES.Comparador;
 import ProjetoES.Metrica;
 import ProjetoES.Regra;
 
-class TestDetecaoDefeito {
-
+public class TestDetecaoDefeito {
+	
 	Comparador comparadorCima;
 	Comparador comparadorBaixo;
 	int valorCima = 30;
@@ -20,11 +20,20 @@ class TestDetecaoDefeito {
 	AndOr a;
 	
 	private Regra r = new Regra (comparadorCima, comparadorBaixo, valorCima, valorBaixo, metricaCima, metricaBaixo, a);
-	
+
 	@Test
-	void test1() {
-		
+	public void testDetetarDefeito() {
+		fail("Not yet implemented");
 	}
-	
+
+	@Test
+	public void testGetVetorBooleanJunto() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetVetorFinal() {
+		fail("Not yet implemented");
+	}
 
 }

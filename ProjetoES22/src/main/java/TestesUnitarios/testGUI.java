@@ -1,25 +1,38 @@
-/**
- * 
- */
 package TestesUnitarios;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import ProjetoES.GUI;
 
-/**
- * @author laura
- *
- */
 public class testGUI {
-
-	private GUI gui = new GUI();
 	
+	private GUI gui = new GUI();
+
 	@Test
-	public void test() {
+	public void testMain() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetFrmQualidadeDeDeteo() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetFrmQualidadeDeDeteo() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGUI() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testInitialize() {
 		gui.initialize();
 		Assert.assertFalse(gui.getFrmQualidadeDeDeteo().isVisible());
 	}

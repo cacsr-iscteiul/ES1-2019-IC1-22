@@ -1,21 +1,15 @@
-/**
- * 
- */
 package TestesUnitarios;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 import ProjetoES.AndOr;
 import ProjetoES.Comparador;
 import ProjetoES.Metrica;
 import ProjetoES.Regra;
 
-/**
- * @author aguia
- *
- */
-public class TestRegra {
+class TestRegra {
 
 	Comparador comparadorCima = Comparador.IGUAL;
 	Comparador comparadorBaixo = Comparador.MAIOR;
@@ -26,41 +20,80 @@ public class TestRegra {
 	AndOr a = AndOr.AND;
 
 	private Regra r = new Regra (comparadorCima, comparadorBaixo, valorCima, valorBaixo, metricaCima, metricaBaixo, a);
-
+	
 	@Test
-	public void testRegra1() {
-		Assert.assertEquals(AndOr.AND, r.getAndOr());
+	void testGetAndOr() {
+		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testRegra2() {
-		Assert.assertEquals(Comparador.IGUAL, r.getComparadorCima());		
+	void testSetAndOr() {
+		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testRegra3() {
-		Assert.assertEquals(Comparador.MAIOR, r.getComparadorBaixo());
+	void testRegra() {
+		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testRegra4() {
-		Assert.assertEquals(30, r.getValorCima());
+	void testGetComparadorCima() {
+		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testRegra5() {
-		Assert.assertEquals(50, r.getValorBaixo());
+	void testSetComparadorCima() {
+		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testRegra6() {
-		Assert.assertEquals(Metrica.CYCLO, r.getMetricaCima());
+	void testGetComparadorBaixo() {
+		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testRegra7() {
-		Assert.assertEquals(Metrica.LOC, r.getMetricaBaixo());
+	void testSetComparadorBaixo() {
+		fail("Not yet implemented");
 	}
 
+	@Test
+	void testGetValorCima() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testSetValorCima() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetValorBaixo() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testSetValorBaixo() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetMetricaCima() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testSetMetricaCima() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetMetricaBaixo() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testSetMetricaBaixo() {
+		fail("Not yet implemented");
+	}
 
 }
