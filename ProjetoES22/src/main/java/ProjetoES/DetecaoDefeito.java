@@ -320,6 +320,12 @@ public class DetecaoDefeito {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
 	}
+	public Boolean[] getVetorBooleanJunto() {
+		return vetorBooleanJunto;
+	}
+	public int[] getVetorFinal() {
+		return vetorFinal;
+	}
 
 }
 
