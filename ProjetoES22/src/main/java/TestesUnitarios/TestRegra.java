@@ -3,19 +3,21 @@
  */
 package TestesUnitarios;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+//import static org.junit.Assert.assertEquals;
+//import static org.junit.jupiter.api.Assertions.*;
+//import static org.junit.Assert.*;
+//import static org.junit.jupiter.api.Assertions.assertEquals;
+//import static org.junit.jupiter.api.Assertions.assertFalse;
+//import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+//import org.junit.jupiter.api.AfterAll;
+//import org.junit.jupiter.api.AfterEach;
+//import org.junit.jupiter.api.BeforeAll;
+//import org.junit.jupiter.api.BeforeEach;
+
 //import org.junit.jupiter.api.Test;
 
 import ProjetoES.AndOr;
@@ -27,136 +29,60 @@ import ProjetoES.Regra;
  * @author aguia
  *
  */
-class TestRegra {
+public class TestRegra {
+	private Regra r;
 
-//Inicio dos testes	
-	
-	/**
-	 * Test method for {@link ProjetoES.Regra#getAndOr()}.
-	 */
-	
+	Comparador comparadorCima = Comparador.IGUAL;
+	Comparador comparadorBaixo = Comparador.MAIOR;
+	int valorCima = 30;
+	int valorBaixo = 50;
+	Metrica metricaCima = Metrica.CYCLO;
+	Metrica metricaBaixo = Metrica.LOC;
+	AndOr a = AndOr.AND;
+
+
 	@Test
 	public void testRegra1() {
-		Regra r = new Regra(Comparador.IGUAL, Comparador.MENOR, 30, 50, Metrica.ATFD, Metrica.CYCLO, AndOr.AND);
-		Comparador c = Comparador.IGUAL;
-//		assertEquals(Comparador.IGUAL, c);	
+		r = new Regra (comparadorCima, comparadorBaixo, valorCima, valorBaixo, metricaCima, metricaBaixo, a);
+		Assert.assertEquals(AndOr.AND, r.getAndOr());
 	}
-	
-//	@Test
-//	final void testGetAndOr() {
-//		Regra r = new Regra(Comparador.IGUAL, Comparador.MENOR, 30, 50, Metrica.ATFD, Metrica.CYCLO, AndOr.AND);
-//	}
 
-	/**
-	 * Test method for {@link ProjetoES.Regra#setAndOr(ProjetoES.AndOr)}.
-	 */
 	@Test
-	final void testSetAndOr() {
+	public void testRegra2() {
 
+		Regra r = new Regra (comparadorCima, comparadorBaixo, valorCima, valorBaixo, metricaCima, metricaBaixo, a);
+		Assert.assertEquals(Comparador.IGUAL, r.getComparadorCima());		
 	}
 
-	/**
-	 * Test method for {@link ProjetoES.Regra#Regra(ProjetoES.Comparador, ProjetoES.Comparador, int, int, ProjetoES.Metrica, ProjetoES.Metrica, ProjetoES.AndOr)}.
-	 */
 	@Test
-	final void testRegra() {
-
+	public void testRegra3() {
+		r = new Regra (comparadorCima, comparadorBaixo, valorCima, valorBaixo, metricaCima, metricaBaixo, a);
+		Assert.assertEquals(Comparador.MAIOR, r.getComparadorBaixo());
 	}
 
-	/**
-	 * Test method for {@link ProjetoES.Regra#getComparadorCima()}.
-	 */
 	@Test
-	final void testGetComparadorCima() {
-
+	public void testRegra4() {
+		r = new Regra (comparadorCima, comparadorBaixo, valorCima, valorBaixo, metricaCima, metricaBaixo, a);
+		Assert.assertEquals(30, r.getValorCima());
 	}
 
-	/**
-	 * Test method for {@link ProjetoES.Regra#setComparadorCima(ProjetoES.Comparador)}.
-	 */
 	@Test
-	final void testSetComparadorCima() {
-
+	public void testRegra5() {
+		r = new Regra (comparadorCima, comparadorBaixo, valorCima, valorBaixo, metricaCima, metricaBaixo, a);
+		Assert.assertEquals(50, r.getValorBaixo());
 	}
 
-	/**
-	 * Test method for {@link ProjetoES.Regra#getComparadorBaixo()}.
-	 */
 	@Test
-	final void testGetComparadorBaixo() {
-
+	public void testRegra6() {
+		r = new Regra (comparadorCima, comparadorBaixo, valorCima, valorBaixo, metricaCima, metricaBaixo, a);
+		Assert.assertEquals(Metrica.CYCLO, r.getMetricaCima());
 	}
 
-	/**
-	 * Test method for {@link ProjetoES.Regra#setComparadorBaixo(ProjetoES.Comparador)}.
-	 */
 	@Test
-	final void testSetComparadorBaixo() {
-
+	public void testRegra7() {
+		r = new Regra (comparadorCima, comparadorBaixo, valorCima, valorBaixo, metricaCima, metricaBaixo, a);
+		Assert.assertEquals(Metrica.LOC, r.getMetricaBaixo());
 	}
 
-	/**
-	 * Test method for {@link ProjetoES.Regra#getValorCima()}.
-	 */
-	@Test
-	final void testGetValorCima() {
-
-	}
-
-	/**
-	 * Test method for {@link ProjetoES.Regra#setValorCima(int)}.
-	 */
-	@Test
-	final void testSetValorCima() {
-
-	}
-
-	/**
-	 * Test method for {@link ProjetoES.Regra#getValorBaixo()}.
-	 */
-	@Test
-	final void testGetValorBaixo() {
-
-	}
-
-	/**
-	 * Test method for {@link ProjetoES.Regra#setValorBaixo(int)}.
-	 */
-	@Test
-	final void testSetValorBaixo() {
-
-	}
-
-	/**
-	 * Test method for {@link ProjetoES.Regra#getMetricaCima()}.
-	 */
-	@Test
-	final void testGetMetricaCima() {
-
-	}
-
-	/**
-	 * Test method for {@link ProjetoES.Regra#setMetricaCima(ProjetoES.Metrica)}.
-	 */
-	@Test
-	final void testSetMetricaCima() {
-
-	}
-
-	/**
-	 * Test method for {@link ProjetoES.Regra#getMetricaBaixo()}.
-	 */
-	@Test
-	final void testGetMetricaBaixo() {
-
-	}
-
-	/**
-	 * Test method for {@link ProjetoES.Regra#setMetricaBaixo(ProjetoES.Metrica)}.
-	 */
-	@Test
-	final void testSetMetricaBaixo() {
-
-	}
 
 }

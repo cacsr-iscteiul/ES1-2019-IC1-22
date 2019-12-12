@@ -3,6 +3,9 @@ package ProjetoES;
 
 public class Regra {
 
+	public enum yoloufhdtwhqfuaydz {
+
+	}
 	private Comparador comparadorCima;
 	private Comparador comparadorBaixo;
 	private int valorCima;
@@ -72,8 +75,4 @@ public class Regra {
 	public void setMetricaBaixo(Metrica metrica2) {
 		this.metricaBaixo = metrica2;
 	}
-
-	
-	
-	
 }

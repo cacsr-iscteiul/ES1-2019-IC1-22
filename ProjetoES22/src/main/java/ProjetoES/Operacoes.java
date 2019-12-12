@@ -17,19 +17,19 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class Operacoes {
 
-	private  int DCI_longMehtod_plasma;//true true
-	private  int DII_longMehtod_plasma;//true false 
-	private  int ADCI_longMehtod_plasma;//false false
+	private  int DCI_longMehtod_plasma; //true true
+	private  int DII_longMehtod_plasma; //true false 
+	private  int ADCI_longMehtod_plasma; //false false
 	private  int ADII_longMehtod_plasma;
 
-	private  int DCI_longMehtod_PMD;//true true
-	private  int DII_longMehtod_PMD;//true false 
-	private  int ADCI_longMehtod_PMD;//false false
+	private  int DCI_longMehtod_PMD; //true true
+	private  int DII_longMehtod_PMD; //true false 
+	private  int ADCI_longMehtod_PMD; //false false
 	private  int ADII_longMehtod_PMD;
 
-	private  int DCI_Regra;//true true
-	private  int DII_Regra;//true false 
-	private  int ADCI_Regra;//false false
+	private  int DCI_Regra; //true true
+	private  int DII_Regra; //true false 
+	private  int ADCI_Regra; //false false
 	private  int ADII_Regra;
 
 	public  void comparador_longMehtod_plasma(File excel) {
@@ -72,9 +72,9 @@ public class Operacoes {
 					ADII_longMehtod_plasma++;
 				}
 
-				//				System.out.println("DCI:"+DCI);
-				//				System.out.println("DII:"+DII);
-				//				System.out.println("ADCI"+ADCI);
+				//System.out.println("DCI:"+DCI);
+				//System.out.println("DII:"+DII);
+				//tem.out.println("ADCI"+ADCI);
 				//				System.out.println("ADII"+ADII);
 
 
