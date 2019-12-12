@@ -51,8 +51,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanCima[a] = false;
 						}
-						//System.out.println("LOC DE CIMA:" +vetorExcel[a]+ " " +vetorBooleanCima[a]);
-
 					}
 					if(regra.getComparadorCima() == Comparador.MENOR){
 						if(vetorExcel[a] < regra.getValorCima()) {
@@ -60,7 +58,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanCima[a] = false;
 						}
-						//System.out.println("LOC DE CIMA:" +vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
 					if(regra.getComparadorCima() == Comparador.IGUAL){
 						if(vetorExcel[a] == regra.getValorCima()) {
@@ -68,7 +65,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanCima[a] = false;
 						}
-						//System.out.println("LOC DE CIMA:" +vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
 				}
 
@@ -82,7 +78,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanCima[a] = false;
 						}
-						//System.out.println("CYCLO DE CIMA"+vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
 					if(regra.getComparadorCima() == Comparador.MENOR){
 						if(vetorExcel[a] < regra.getValorCima()) {
@@ -90,7 +85,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanCima[a] = false;
 						}
-						//System.out.println("CYCLO DE CIMA"+vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
 					if(regra.getComparadorCima() == Comparador.IGUAL){
 						if(vetorExcel[a] == regra.getValorCima()) {
@@ -98,7 +92,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanCima[a] = false;
 						}
-						//System.out.println("CYCLO DE CIMA"+vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
 				}
 
@@ -112,7 +105,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanCima[a] = false;
 						}
-						//System.out.println("ATFD DE CIMA:"+vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
 					if(regra.getComparadorCima() == Comparador.MENOR){
 						if(vetorExcel[a] < regra.getValorCima()) {
@@ -120,7 +112,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanCima[a] = false;
 						}
-						//System.out.println("ATFD DE CIMA:"+vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
 					if(regra.getComparadorCima() == Comparador.IGUAL){
 						if(vetorExcel[a] == regra.getValorCima()) {
@@ -128,7 +119,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanCima[a] = false;
 						}
-						//System.out.println("ATFD DE CIMA:"+vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
 				}
 
@@ -142,7 +132,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanCima[a] = false;
 						}
-						//System.out.println("LAA DE CIMA:"+vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
 					if(regra.getComparadorCima() == Comparador.MENOR){
 						if(vetorExcel[a] < regra.getValorCima()) {
@@ -150,7 +139,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanCima[a] = false;
 						}
-						//System.out.println("LAA DE CIMA:"+vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
 					if(regra.getComparadorCima() == Comparador.IGUAL){
 						if(vetorExcel[a] == regra.getValorCima()) {
@@ -158,7 +146,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanCima[a] = false;
 						}
-						//System.out.println("LAA DE CIMA:"+vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
 				}
 
@@ -173,7 +160,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanBaixo[a] = false;
 						}
-						//System.out.println("LOC DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
 
 					}
 					if(regra.getComparadorBaixo() == Comparador.MENOR){
@@ -182,7 +168,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanBaixo[a] = false;
 						}
-						//	System.out.println("LOC DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
 					}
 					if(regra.getComparadorBaixo() == Comparador.IGUAL){
 						if(vetorExcel2[a] == regra.getValorBaixo()) {
@@ -246,7 +231,6 @@ public class DetecaoDefeito {
 						}
 					}
 				}
-
 
 				//LAA baixo
 				if( regra.getMetricaBaixo() == Metrica.LAA ) {
@@ -315,6 +299,5 @@ public class DetecaoDefeito {
 	public int[] getVetorFinal() {
 		return vetorFinal;
 	}
-
+	
 }
-

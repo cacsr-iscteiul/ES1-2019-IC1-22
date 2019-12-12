@@ -55,6 +55,12 @@ public class GUI {
 	private Operacoes operacoes;
 	DefaultTableModel dtm = new DefaultTableModel();  //mudei isto para aqui
 	DetecaoDefeito d1;
+	
+//	public GUI() {
+//		
+//	}
+	
+	
 
 	/**
 	 * Launch the application.
@@ -72,6 +78,14 @@ public class GUI {
 		});
 	}
 
+	public JFrame getFrmQualidadeDeDeteo() {
+		return frmQualidadeDeDeteo;
+	}
+
+	public void setFrmQualidadeDeDeteo(JFrame frmQualidadeDeDeteo) {
+		this.frmQualidadeDeDeteo = frmQualidadeDeDeteo;
+	}
+
 	/**
 	 * Create the application.
 	 */
@@ -82,7 +96,7 @@ public class GUI {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		frmQualidadeDeDeteo = new JFrame();
 		frmQualidadeDeDeteo.setFont(new Font("Algerian", Font.BOLD, 14));
 		frmQualidadeDeDeteo.setTitle("Qualidade de Deteção de Erros\r\n");
@@ -218,20 +232,14 @@ public class GUI {
 			public void actionPerformed(ActionEvent arg0) {
 				int valorBaixo = Integer.parseInt(textField.getText());
 				int valorCima = Integer.parseInt(textField_1.getText());
-				//System.out.println(valorCima);
-				//System.out.println(valorBaixo);
 				String comparadorStringCima = (String)comboBoxComparador.getSelectedItem();
 				String comparadorStringBaixo = (String)comboBoxComparadorCima.getSelectedItem();
 				Comparador comparadorCima = Comparador.valueOf(comparadorStringCima);
 				Comparador comparadorBaixo = Comparador.valueOf(comparadorStringBaixo);
-				//System.out.println(comparadorCima);
-				//System.out.println(comparadorBaixo);
 				String metricaStringCima = (String)comboBoxMetricaCima.getSelectedItem();
 				String metricaStringBaixo = (String)comboBoxMetricaBaixo.getSelectedItem();
 				Metrica metricaCima = Metrica.valueOf(metricaStringCima);
 				Metrica metricaBaixo = Metrica.valueOf(metricaStringBaixo);
-				//System.out.println(metricaCima);
-				//System.out.println(metricaBaixo);
 				String AndOrString = (String)comboBoxAndOr.getSelectedItem();
 				AndOr inha =AndOr.valueOf(AndOrString);
 				regra = new Regra(comparadorCima,comparadorBaixo,valorCima,valorBaixo,metricaCima,metricaBaixo,inha);
