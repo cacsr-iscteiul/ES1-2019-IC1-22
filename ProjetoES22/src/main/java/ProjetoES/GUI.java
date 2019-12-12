@@ -148,7 +148,7 @@ public class GUI {
 
 		final JComboBox comboBoxAndOr = new JComboBox();
 		comboBoxAndOr.setBounds(728, 58, 103, 20);
-		comboBoxAndOr.setModel(new DefaultComboBoxModel(new String[] {"And", "Or"}));
+		comboBoxAndOr.setModel(new DefaultComboBoxModel(new String[] {"AND", "OR"}));
 		frmQualidadeDeDeteo.getContentPane().add(comboBoxAndOr);
 
 		final JComboBox comboBoxMetricaCima = new JComboBox();

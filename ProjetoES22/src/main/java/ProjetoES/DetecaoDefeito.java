@@ -14,7 +14,12 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class DetecaoDefeito {
 	private Double[] vetorExcel;
-	Boolean[] vetorBoolean;
+	private Double[] vetorExcel2;
+	Boolean[] vetorBooleanCima;
+	Boolean[] vetorBooleanBaixo;
+	Boolean[] vetorBooleanJunto;
+	int[] vetorFinal;
+	int contador=0;
 	//boolean[] e regra
 	public void  detetarDefeito(Regra regra, File excel) {
 		try { 
@@ -22,143 +27,299 @@ public class DetecaoDefeito {
 			BufferedInputStream excelBIS = new BufferedInputStream(excelFIS);
 			XSSFWorkbook excelJTable = new XSSFWorkbook(excelBIS);
 			XSSFSheet excelSheet = excelJTable.getSheetAt(0);
-			
-		 vetorExcel = new Double[excelSheet.getLastRowNum()];
-		vetorBoolean = new Boolean[excelSheet.getLastRowNum()];
-			
+
+			vetorExcel = new Double[excelSheet.getLastRowNum()];
+			vetorExcel2 = new Double[excelSheet.getLastRowNum()];
+			vetorBooleanCima = new Boolean[excelSheet.getLastRowNum()];
+			vetorBooleanBaixo = new Boolean[excelSheet.getLastRowNum()];
+			vetorBooleanJunto = new Boolean[excelSheet.getLastRowNum()];
+
+
 			for(int linha=1,a=0; linha <= excelSheet.getLastRowNum() && a!=vetorExcel.length; linha++,a++) {
 				XSSFRow linhaExcel = excelSheet.getRow(linha);
-				vetorExcel[a] = linhaExcel.getCell(4).getNumericCellValue();
-				
+
+
 				//LOC
-			 
+
 				if( regra.getMetricaCima() == Metrica.LOC) {
-				if(regra.getComparadorCima() == Comparador.MAIOR){
-					if(vetorExcel[a] > regra.getValorCima()) {
-						vetorBoolean[a] = true;
-					}else {
-						vetorBoolean[a] = false;
+					vetorExcel[a] = linhaExcel.getCell(4).getNumericCellValue();
+					if(regra.getComparadorCima() == Comparador.MAIOR){
+						if(vetorExcel[a] > regra.getValorCima()) {
+							vetorBooleanCima[a] = true;
+						}else {
+							vetorBooleanCima[a] = false;
+						}
+						//System.out.println("LOC DE CIMA:" +vetorExcel[a]+ " " +vetorBooleanCima[a]);
+
 					}
-					System.out.println(vetorExcel[a]+ " " +vetorBoolean[a]);
-					
-				}
-				if(regra.getComparadorCima() == Comparador.MENOR){
-					if(vetorExcel[a] < regra.getValorCima()) {
-						vetorBoolean[a] = true;
-					}else {
-						vetorBoolean[a] = false;
+					if(regra.getComparadorCima() == Comparador.MENOR){
+						if(vetorExcel[a] < regra.getValorCima()) {
+							vetorBooleanCima[a] = true;
+						}else {
+							vetorBooleanCima[a] = false;
+						}
+						//System.out.println("LOC DE CIMA:" +vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
-					System.out.println(vetorExcel[a]+ " " +vetorBoolean[a]);
-				}
-				if(regra.getComparadorCima() == Comparador.IGUAL){
-					if(vetorExcel[a] == regra.getValorCima()) {
-						vetorBoolean[a] = true;
-					}else {
-						vetorBoolean[a] = false;
+					if(regra.getComparadorCima() == Comparador.IGUAL){
+						if(vetorExcel[a] == regra.getValorCima()) {
+							vetorBooleanCima[a] = true;
+						}else {
+							vetorBooleanCima[a] = false;
+						}
+						//System.out.println("LOC DE CIMA:" +vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
-					System.out.println(vetorExcel[a]+ " " +vetorBoolean[a]);
 				}
-				}
-				
-				
+
+
 				//CYCLO
 				if( regra.getMetricaCima() == Metrica.CYCLO ) {
+					vetorExcel[a] = linhaExcel.getCell(5).getNumericCellValue();
 					if(regra.getComparadorCima() == Comparador.MAIOR){
 						if(vetorExcel[a] > regra.getValorCima()) {
-							vetorBoolean[a] = true;
+							vetorBooleanCima[a] = true;
 						}else {
-							vetorBoolean[a] = false;
+							vetorBooleanCima[a] = false;
 						}
-						System.out.println(vetorExcel[a]+ " " +vetorBoolean[a]);
+						//System.out.println("CYCLO DE CIMA"+vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
 					if(regra.getComparadorCima() == Comparador.MENOR){
 						if(vetorExcel[a] < regra.getValorCima()) {
-							vetorBoolean[a] = true;
+							vetorBooleanCima[a] = true;
 						}else {
-							vetorBoolean[a] = false;
+							vetorBooleanCima[a] = false;
 						}
-						System.out.println(vetorExcel[a]+ " " +vetorBoolean[a]);
+						//System.out.println("CYCLO DE CIMA"+vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
 					if(regra.getComparadorCima() == Comparador.IGUAL){
 						if(vetorExcel[a] == regra.getValorCima()) {
-							vetorBoolean[a] = true;
+							vetorBooleanCima[a] = true;
 						}else {
-							vetorBoolean[a] = false;
+							vetorBooleanCima[a] = false;
 						}
-						System.out.println(vetorExcel[a]+ " " +vetorBoolean[a]);
+						//System.out.println("CYCLO DE CIMA"+vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
-					}
-				
-				
+				}
+
+
 				//ATFD
 				if( regra.getMetricaCima() == Metrica.ATFD ) {
+					vetorExcel[a] = linhaExcel.getCell(6).getNumericCellValue();
 					if(regra.getComparadorCima() == Comparador.MAIOR){
 						if(vetorExcel[a] > regra.getValorCima()) {
-							vetorBoolean[a] = true;
+							vetorBooleanCima[a] = true;
 						}else {
-							vetorBoolean[a] = false;
+							vetorBooleanCima[a] = false;
 						}
-						System.out.println(vetorExcel[a]+ " " +vetorBoolean[a]);
+						//System.out.println("ATFD DE CIMA:"+vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
 					if(regra.getComparadorCima() == Comparador.MENOR){
 						if(vetorExcel[a] < regra.getValorCima()) {
-							vetorBoolean[a] = true;
+							vetorBooleanCima[a] = true;
 						}else {
-							vetorBoolean[a] = false;
+							vetorBooleanCima[a] = false;
 						}
-						System.out.println(vetorExcel[a]+ " " +vetorBoolean[a]);
+						//System.out.println("ATFD DE CIMA:"+vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
 					if(regra.getComparadorCima() == Comparador.IGUAL){
 						if(vetorExcel[a] == regra.getValorCima()) {
-							vetorBoolean[a] = true;
+							vetorBooleanCima[a] = true;
 						}else {
-							vetorBoolean[a] = false;
+							vetorBooleanCima[a] = false;
 						}
-						System.out.println(vetorExcel[a]+ " " +vetorBoolean[a]);
+						//System.out.println("ATFD DE CIMA:"+vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
-					}
-				
-				
+				}
+
+
 				//LAA
 				if( regra.getMetricaCima() == Metrica.LAA ) {
+					vetorExcel[a] = linhaExcel.getCell(7).getNumericCellValue();
 					if(regra.getComparadorCima() == Comparador.MAIOR){
 						if(vetorExcel[a] > regra.getValorCima()) {
-							vetorBoolean[a] = true;
+							vetorBooleanCima[a] = true;
 						}else {
-							vetorBoolean[a] = false;
+							vetorBooleanCima[a] = false;
 						}
-						System.out.println(vetorExcel[a]+ " " +vetorBoolean[a]);
+						//System.out.println("LAA DE CIMA:"+vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
 					if(regra.getComparadorCima() == Comparador.MENOR){
 						if(vetorExcel[a] < regra.getValorCima()) {
-							vetorBoolean[a] = true;
+							vetorBooleanCima[a] = true;
 						}else {
-							vetorBoolean[a] = false;
+							vetorBooleanCima[a] = false;
 						}
-						System.out.println(vetorExcel[a]+ " " +vetorBoolean[a]);
+						//System.out.println("LAA DE CIMA:"+vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
 					if(regra.getComparadorCima() == Comparador.IGUAL){
 						if(vetorExcel[a] == regra.getValorCima()) {
-							vetorBoolean[a] = true;
+							vetorBooleanCima[a] = true;
 						}else {
-							vetorBoolean[a] = false;
+							vetorBooleanCima[a] = false;
 						}
-						System.out.println(vetorExcel[a]+ " " +vetorBoolean[a]);
+						//System.out.println("LAA DE CIMA:"+vetorExcel[a]+ " " +vetorBooleanCima[a]);
 					}
-					}
-			}			
-			
+				}
 
-		//	if(regra.getMetricaCima()==Metrica.LOC) {
-				//ler columa 9
+				//BAIXO
+				//LOC baixo
+
+				if( regra.getMetricaBaixo() == Metrica.LOC) {
+					vetorExcel2[a] = linhaExcel.getCell(4).getNumericCellValue();
+					if(regra.getComparadorBaixo() == Comparador.MAIOR){
+						if(vetorExcel2[a] > regra.getValorBaixo()) {
+							vetorBooleanBaixo[a] = true;
+						}else {
+							vetorBooleanBaixo[a] = false;
+						}
+						//System.out.println("LOC DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
+
+					}
+					if(regra.getComparadorBaixo() == Comparador.MENOR){
+						if(vetorExcel2[a] < regra.getValorBaixo()) {
+							vetorBooleanBaixo[a] = true;
+						}else {
+							vetorBooleanBaixo[a] = false;
+						}
+					//	System.out.println("LOC DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
+					}
+					if(regra.getComparadorBaixo() == Comparador.IGUAL){
+						if(vetorExcel2[a] == regra.getValorBaixo()) {
+							vetorBooleanBaixo[a] = true;
+						}else {
+							vetorBooleanBaixo[a] = false;
+						}
+						//System.out.println("LOC DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
+					}
+				}
+
+
+				//CYCLO baixo
+				if( regra.getMetricaBaixo() == Metrica.CYCLO ) {
+					vetorExcel2[a] = linhaExcel.getCell(5).getNumericCellValue();
+					if(regra.getComparadorBaixo() == Comparador.MAIOR){
+						if(vetorExcel2[a] > regra.getValorBaixo()) {
+							vetorBooleanBaixo[a] = true;
+						}else {
+							vetorBooleanBaixo[a] = false;
+						}
+						//System.out.println("CYCLO DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
+					}
+					if(regra.getComparadorBaixo() == Comparador.MENOR){
+						if(vetorExcel2[a] < regra.getValorBaixo()) {
+							vetorBooleanBaixo[a] = true;
+						}else {
+							vetorBooleanBaixo[a] = false;
+						}
+						//System.out.println("CYCLO DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
+					}
+					if(regra.getComparadorBaixo() == Comparador.IGUAL){
+						if(vetorExcel2[a] == regra.getValorBaixo()) {
+							vetorBooleanBaixo[a] = true;
+						}else {
+							vetorBooleanBaixo[a] = false;
+						}
+						//System.out.println("CYCLO DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
+					}
+				}
+
+
+				//ATFD baixo
+				if( regra.getMetricaBaixo() == Metrica.ATFD ) {
+					vetorExcel2[a] = linhaExcel.getCell(6).getNumericCellValue();
+					if(regra.getComparadorBaixo() == Comparador.MAIOR){
+						if(vetorExcel2[a] > regra.getValorBaixo()) {
+							vetorBooleanBaixo[a] = true;
+						}else {
+							vetorBooleanBaixo[a] = false;
+						}
+						//System.out.println("ATFD DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
+					}
+					if(regra.getComparadorBaixo() == Comparador.MENOR){
+						if(vetorExcel2[a] < regra.getValorBaixo()) {
+							vetorBooleanBaixo[a] = true;
+						}else {
+							vetorBooleanBaixo[a] = false;
+						}
+						//System.out.println("ATFD DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
+					}
+					if(regra.getComparadorBaixo() == Comparador.IGUAL){
+						if(vetorExcel2[a] == regra.getValorBaixo()) {
+							vetorBooleanBaixo[a] = true;
+						}else {
+							vetorBooleanBaixo[a] = false;
+						}
+						//System.out.println("ATFD DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
+					}
+				}
+
+
+				//LAA baixo
+				if( regra.getMetricaBaixo() == Metrica.LAA ) {
+					vetorExcel2[a] = linhaExcel.getCell(7).getNumericCellValue();
+					if(regra.getComparadorBaixo() == Comparador.MAIOR){
+						if(vetorExcel2[a] > regra.getValorBaixo()) {
+							vetorBooleanBaixo[a] = true;
+						}else {
+							vetorBooleanBaixo[a] = false;
+						}
+						//System.out.println("LAA DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
+					}
+					if(regra.getComparadorBaixo() == Comparador.MENOR){
+						if(vetorExcel2[a] < regra.getValorBaixo()) {
+							vetorBooleanBaixo[a] = true;
+						}else {
+							vetorBooleanBaixo[a] = false;
+						}
+						//System.out.println("LAA DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
+					}
+					if(regra.getComparadorBaixo() == Comparador.IGUAL){
+						if(vetorExcel2[a] == regra.getValorBaixo()) {
+							vetorBooleanBaixo[a] = true;
+						}else {
+							vetorBooleanBaixo[a] = false;
+						}
+						//System.out.println("LAA DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
+					}
+				}
+
+			}			
+			for(int i=0;i!=vetorBooleanBaixo.length;i++) {
+				if(regra.getAndOr()==AndOr.AND) {
+					if(vetorBooleanCima[i]==true && vetorBooleanBaixo[i]==true) {
+						vetorBooleanJunto[i]=true;
+						contador++;
+					}else {
+						vetorBooleanJunto[i]=false;
+					}
+				}else {
+					if(vetorBooleanCima[i]==true || vetorBooleanBaixo[i]==true) {
+						vetorBooleanJunto[i]=true;
+						contador++;
+					}else{
+						vetorBooleanJunto[i]=false;
+					}
+				}
+			//	System.out.println(":"+vetorBooleanJunto[i]);
+			}
+
+			vetorFinal = new int[contador];
 			
-			//}
+			
+			for(int i=0,j=0;i!=vetorBooleanJunto.length && j!=vetorFinal.length;i++) {
+					if(vetorBooleanJunto[i]==true) {
+						vetorFinal[j]=i+1;
+						System.out.println(vetorFinal[j]);
+						j++;
+					}
+				}
+		//	}
+
 		}catch (FileNotFoundException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
 	}
-	
+
 }
 
