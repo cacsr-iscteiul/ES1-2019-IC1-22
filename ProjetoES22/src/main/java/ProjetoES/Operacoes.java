@@ -65,14 +65,13 @@ public class Operacoes {
 					ADII++;
 				}
 
-
+//				System.out.println("DCI:"+DCI);
+//				System.out.println("DII:"+DII);
+//				System.out.println("ADCI"+ADCI);
+//				System.out.println("ADII"+ADII);
 
 
 			}
-			System.out.println("DCI:"+DCI);
-			System.out.println("DII:"+DII);
-			System.out.println("ADCI"+ADCI);
-			System.out.println("ADII"+ADII);
 		}catch (FileNotFoundException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		} catch (IOException e) {

@@ -308,7 +308,7 @@ public class DetecaoDefeito {
 			for(int i=0,j=0;i!=vetorBooleanJunto.length && j!=vetorFinal.length;i++) {
 					if(vetorBooleanJunto[i]==true) {
 						vetorFinal[j]=i+1;
-						System.out.println(vetorFinal[j]);
+						//System.out.println(vetorFinal[j]);
 						j++;
 					}
 				}
