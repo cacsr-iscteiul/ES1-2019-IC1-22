@@ -9,7 +9,6 @@ public class Regra {
 	private int valorBaixo;
 	private Metrica metricaCima;
 	private Metrica metricaBaixo;
-	public int id;
 	private AndOr andOr;
 	
 public AndOr getAndOr() {
@@ -26,9 +25,8 @@ public AndOr getAndOr() {
 //		this.valor = valor;
 //		this.metrica = metrica;
 //	}
-	public Regra(int id, Comparador comparador, Comparador comaparador2, int valor, int valor2, Metrica metrica,
+	public Regra(Comparador comparador, Comparador comaparador2, int valor, int valor2, Metrica metrica,
 			Metrica metrica2,AndOr a) {
-		this.id = id;
 		this.comparadorCima = comparador;
 		this.comparadorBaixo = comaparador2;
 		this.valorCima = valor;
@@ -74,12 +72,7 @@ public AndOr getAndOr() {
 	public void setMetricaBaixo(Metrica metrica2) {
 		this.metricaBaixo = metrica2;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	
 	
 	

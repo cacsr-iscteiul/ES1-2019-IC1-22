@@ -53,7 +53,8 @@ public class GUI {
 	private File excel;
 	private Regra regra;
 	private Operacoes operacoes;
-	DefaultTableModel dtm = new DefaultTableModel();  //mudei isto para aqui 
+	DefaultTableModel dtm = new DefaultTableModel();  //mudei isto para aqui
+	DetecaoDefeito d1;
 
 	/**
 	 * Launch the application.
@@ -119,8 +120,6 @@ public class GUI {
 					//		System.out.println(cell);
 
 						} 
-
-						Operacoes.comparador_longMehtod_plasma(excel);
 					}catch (FileNotFoundException e) {
 						JOptionPane.showMessageDialog(null, e.getMessage());
 					} catch (IOException e) {
@@ -193,7 +192,7 @@ public class GUI {
 			public void actionPerformed(ActionEvent arg0) {
 //				DetetarErroGUI d = new DetetarErroGUI();
 //				d.main(null);
-				DetecaoDefeito d1 = new DetecaoDefeito();
+				 d1 = new DetecaoDefeito();
 				d1.detetarDefeito(regra,excel);
 				JOptionPane.showMessageDialog(null, "MetodosID  com defeito:  " + Arrays.toString(d1.getVetorFinal()));
 			}
@@ -204,7 +203,11 @@ public class GUI {
 		JButton btnNewButton = new JButton("Comparar Defeitos");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, "Regra: " + "  " + "Iplasma: " + "   " + "PMD: \t" + "Regra: " + "  " + "Iplasma: " + "   " + "PMD: \t");
+				operacoes=new Operacoes();
+				operacoes.comparador_Regra(excel, d1.getVetorBooleanJunto(), regra);
+				operacoes.comparador_longMehtod_plasma(excel);
+				operacoes.comparador_longMehtod_PMD(excel);
+				JOptionPane.showMessageDialog(null, "Regra: " +operacoes.getDCI_Regra()+ "  " + "Iplasma: "+operacoes.getDCI_longMehtod_plasma() + "   " + "PMD:"+operacoes.getDCI_longMehtod_PMD() + "Regra: " + "  " + "Iplasma: " + "   " + "PMD: \t");
 				
 			}
 		});
@@ -231,7 +234,7 @@ public class GUI {
 				//System.out.println(metricaBaixo);
 				String AndOrString = (String)comboBoxAndOr.getSelectedItem();
 				AndOr inha =AndOr.valueOf(AndOrString);
-				regra = new Regra(1,comparadorCima,comparadorBaixo,valorCima,valorBaixo,metricaCima,metricaBaixo,inha);
+				regra = new Regra(comparadorCima,comparadorBaixo,valorCima,valorBaixo,metricaCima,metricaBaixo,inha);
 				JOptionPane.showMessageDialog(null, "Regra Adicionada");
 			}
 		});
