@@ -5,15 +5,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-
 
 
 public class Operacoes {
@@ -33,6 +30,14 @@ public class Operacoes {
 	private  int ADCI_Regra; //false false
 	private  int ADII_Regra;
 
+//	public Operacoes (int DCI_longMehtod_plasma, int DII_longMehtod_plasma, int ADCI_longMehtod_plasma, int ADII_longMehtod_plasma) {
+//		this.ADCI_longMehtod_plasma = DCI_longMehtod_plasma;
+//		this.ADII_longMehtod_plasma = DII_longMehtod_plasma;
+//		this.ADCI_longMehtod_plasma = ADCI_longMehtod_plasma;
+//		this.ADII_longMehtod_plasma = ADII_longMehtod_plasma;
+//		
+//	}
+	
 	public  void comparador_longMehtod_plasma(File excel) {
 		try { 
 			FileInputStream excelFIS = new FileInputStream(excel);

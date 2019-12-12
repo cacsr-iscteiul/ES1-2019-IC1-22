@@ -20,9 +20,9 @@ public class DetecaoDefeito {
 	Boolean[] vetorBooleanJunto;
 	int[] vetorFinal;
 	int contador=0;
-	
+
 	//boolean[] e regra
-	
+
 	public void  detetarDefeito(Regra regra, File excel) {
 		try { 
 			FileInputStream excelFIS = new FileInputStream(excel);
@@ -190,7 +190,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanBaixo[a] = false;
 						}
-						//System.out.println("LOC DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
 					}
 				}
 
@@ -204,7 +203,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanBaixo[a] = false;
 						}
-						//System.out.println("CYCLO DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
 					}
 					if(regra.getComparadorBaixo() == Comparador.MENOR){
 						if(vetorExcel2[a] < regra.getValorBaixo()) {
@@ -212,7 +210,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanBaixo[a] = false;
 						}
-						//System.out.println("CYCLO DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
 					}
 					if(regra.getComparadorBaixo() == Comparador.IGUAL){
 						if(vetorExcel2[a] == regra.getValorBaixo()) {
@@ -220,7 +217,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanBaixo[a] = false;
 						}
-						//System.out.println("CYCLO DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
 					}
 				}
 
@@ -234,7 +230,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanBaixo[a] = false;
 						}
-						//System.out.println("ATFD DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
 					}
 					if(regra.getComparadorBaixo() == Comparador.MENOR){
 						if(vetorExcel2[a] < regra.getValorBaixo()) {
@@ -242,7 +237,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanBaixo[a] = false;
 						}
-						//System.out.println("ATFD DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
 					}
 					if(regra.getComparadorBaixo() == Comparador.IGUAL){
 						if(vetorExcel2[a] == regra.getValorBaixo()) {
@@ -250,7 +244,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanBaixo[a] = false;
 						}
-						//System.out.println("ATFD DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
 					}
 				}
 
@@ -264,7 +257,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanBaixo[a] = false;
 						}
-						//System.out.println("LAA DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
 					}
 					if(regra.getComparadorBaixo() == Comparador.MENOR){
 						if(vetorExcel2[a] < regra.getValorBaixo()) {
@@ -272,7 +264,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanBaixo[a] = false;
 						}
-						//System.out.println("LAA DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
 					}
 					if(regra.getComparadorBaixo() == Comparador.IGUAL){
 						if(vetorExcel2[a] == regra.getValorBaixo()) {
@@ -280,7 +271,6 @@ public class DetecaoDefeito {
 						}else {
 							vetorBooleanBaixo[a] = false;
 						}
-						//System.out.println("LAA DE BAIXO:"+vetorExcel2[a]+ " " +vetorBooleanBaixo[a]);
 					}
 				}
 
@@ -301,7 +291,6 @@ public class DetecaoDefeito {
 						vetorBooleanJunto[i]=false;
 					}
 				}
-				//	System.out.println(":"+vetorBooleanJunto[i]);
 			}
 
 			vetorFinal = new int[contador];
@@ -310,11 +299,9 @@ public class DetecaoDefeito {
 			for(int i=0,j=0;i!=vetorBooleanJunto.length && j!=vetorFinal.length;i++) {
 				if(vetorBooleanJunto[i]==true) {
 					vetorFinal[j]=i+1;
-					//System.out.println(vetorFinal[j]);
 					j++;
 				}
 			}
-			//	}
 
 		}catch (FileNotFoundException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
