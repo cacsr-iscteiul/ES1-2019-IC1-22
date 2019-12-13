@@ -293,15 +293,32 @@ public class DetecaoDefeito {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
 	}
+	/**Devolve um vetor.
+	*@return O vetor.
+	*/
+
 	public Boolean[] getVetorBooleanJunto() {
 		return vetorBooleanJunto;
 	}
+	
+	/**Altera o vetor de booleans.
+	 * @param vetorBooleanJunto.
+	 */
 	public void setVetorBooleanJunto(Boolean[] vetorBooleanJunto) {
 		this.vetorBooleanJunto = vetorBooleanJunto;
 	}
+	
+	/**Altera o vetor de inteiros.
+	 * 
+	 * @param vetorFinal.
+	 */
 	public void setVetorFinal(int[] vetorFinal) {
 		this.vetorFinal = vetorFinal;
 	}
+	/**Devolve um vetor.
+	 * 
+	*@return O vetor.
+	*/
 	public int[] getVetorFinal() {
 		return vetorFinal;
 	}

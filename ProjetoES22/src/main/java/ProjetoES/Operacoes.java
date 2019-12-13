@@ -207,99 +207,205 @@ public class Operacoes {
 		}
 	}
 
+	
+	/**Devolve o valor do DCI. 
+	*@return O valor da coluna correspondente à coluna plasma 
+	*	TRUE e o valor correspondente ao is_long_Method TRUE.
+	*/
+
 	public int getDCI_longMehtod_plasma() {
 		return DCI_longMehtod_plasma;
 	}
+	
+	/**Altera o valor do DCI do dCI_longMethod_plasma.
+	*param dCI_longMethod_plasma O valor do DCI.
+	*/
 
 	public void setDCI_longMehtod_plasma(int dCI_longMehtod_plasma) {
 		DCI_longMehtod_plasma = dCI_longMehtod_plasma;
 	}
 
+	/**Devolve o valor do DII.
+	*@return O valor da coluna correspondente à coluna plasma 
+	*	TRUE e o valor correspondente ao is_long_Method FALSE.
+	*/
+
 	public int getDII_longMehtod_plasma() {
 		return DII_longMehtod_plasma;
 	}
+
+	/**Altera o valor do DII do dII_longMehtod_plasma.
+	*param dII_longMehtod_plasma O valor do DII.
+	*/
 
 	public void setDII_longMehtod_plasma(int dII_longMehtod_plasma) {
 		DII_longMehtod_plasma = dII_longMehtod_plasma;
 	}
 
+	/**Devolve o valor do ADCI.
+	*@return O valor da coluna correspondente à coluna plasma 
+	*	 FALSE e o valor correspondente ao is_long_Method FALSE.
+	*/
+
 	public int getADCI_longMehtod_plasma() {
 		return ADCI_longMehtod_plasma;
 	}
+
+	/**Altera o valor do ADCI do aDCI_longMehtod_plasma.
+	*param aDCI_longMehtod_plasma O valor do ADCI.
+	*/
 
 	public void setADCI_longMehtod_plasma(int aDCI_longMehtod_plasma) {
 		ADCI_longMehtod_plasma = aDCI_longMehtod_plasma;
 	}
 
+	/**Devolve o valor do ADII.
+	*@return O valor da coluna correspondente à coluna plasma 
+	*	 FALSE e o valor correspondente ao is_long_Method TRUE.
+	*/
+
 	public int getADII_longMehtod_plasma() {
 		return ADII_longMehtod_plasma;
 	}
+
+	/**Altera o valor do ADII do aDII_longMehtod_plasma.
+	*param aDII_longMehtod_plasma O valor do ADII.
+	*/
 
 	public void setADII_longMehtod_plasma(int aDII_longMehtod_plasma) {
 		ADII_longMehtod_plasma = aDII_longMehtod_plasma;
 	}
 
+	/**Devolve o valor do DCI.
+	*@return O valor da coluna correspondente à coluna PMI 
+	*	 TRUE e o valor correspondente ao is_long_Method TRUE.
+	*/
+
 	public int getDCI_longMehtod_PMD() {
 		return DCI_longMehtod_PMD;
 	}
+
+	/**Altera o valor do DCI do dCI_longMehtod_PMD.
+	*param dCI_longMehtod_PMD O valor do DCI.
+	*/
 
 	public void setDCI_longMehtod_PMD(int dCI_longMehtod_PMD) {
 		DCI_longMehtod_PMD = dCI_longMehtod_PMD;
 	}
 
+	/**Devolve o valor do DII.
+	*@return O valor da coluna correspondente à coluna PMI 
+	*	 TRUE e o valor correspondente ao is_long_Method FALSE.
+	*/
+
 	public int getDII_longMehtod_PMD() {
 		return DII_longMehtod_PMD;
 	}
+
+	/**Altera o valor do DII do dII_longMehtod_PMD.
+	*param dII_longMehtod_PMD O valor do DII.
+	*/
 
 	public void setDII_longMehtod_PMD(int dII_longMehtod_PMD) {
 		DII_longMehtod_PMD = dII_longMehtod_PMD;
 	}
 
+	/**Devolve o valor do ADCI.
+	*@return O valor da coluna correspondente à coluna PMI 
+	*	 FALSE e o valor correspondente ao is_long_Method FALSE.
+	*/
+
 	public int getADCI_longMehtod_PMD() {
 		return ADCI_longMehtod_PMD;
 	}
+
+	/**Altera o valor do ADCI do aDCI_longMehtod_PMD.
+	*param aDCI_longMehtod_PMD O valor do ADCI.
+	*/
 
 	public void setADCI_longMehtod_PMD(int aDCI_longMehtod_PMD) {
 		ADCI_longMehtod_PMD = aDCI_longMehtod_PMD;
 	}
 
+	/**Devolve o valor do ADII.
+	*@return O valor da coluna correspondente à coluna PMI. 
+	*	 FALSE e o valor correspondente ao is_long_Method TRUE.
+	*/
+
 	public int getADII_longMehtod_PMD() {
 		return ADII_longMehtod_PMD;
 	}
+
+	/**Altera o valor do ADII do aDII_longMehtod_PMD.
+	*param aDII_longMehtod_PMD O valor do ADII.
+	*/
 
 	public void setADII_longMehtod_PMD(int aDII_longMehtod_PMD) {
 		ADII_longMehtod_PMD = aDII_longMehtod_PMD;
 	}
 
+	/**Devolve o DCI com a regra definida.
+	*return O valor do DCI.
+	*/
+
 	public int getDCI_Regra() {
 		return DCI_Regra;
 	}
+
+	/**Altera o DCI com a regra definida.
+	*param dCI_Regra O valor do DCI.
+	*/
 
 	public void setDCI_Regra(int dCI_Regra) {
 		DCI_Regra = dCI_Regra;
 	}
 
+	/**Devolve o DII com a regra definida.
+	*return O valor do DII.
+	*/
+
 	public int getDII_Regra() {
 		return DII_Regra;
 	}
+
+	/**Altera o DII com a regra definida.
+	*param dII_Regra O valor do DII.
+	*/
 
 	public void setDII_Regra(int dII_Regra) {
 		DII_Regra = dII_Regra;
 	}
 
+	/**Devolve o ADCI com a regra definida.
+	*return O valor do ADCI.
+	*/
+	
 	public int getADCI_Regra() {
 		return ADCI_Regra;
 	}
 
+	/**Altera o ADCI com a regra definida.
+	*param aDCI_Regra O valor do ADCI.
+	*/
+
 	public void setADCI_Regra(int aDCI_Regra) {
 		ADCI_Regra = aDCI_Regra;
 	}
+	
+	/**Devolve o ADII com a regra definida.
+	*return O valor do ADII.
+	*/
 
 	public int getADII_Regra() {
 		return ADII_Regra;
 	}
 
+	/**Altera o ADII com a regra definida.
+	*param aDII_Regra O valor do ADII.
+	*/
+
 	public void setADII_Regra(int aDII_Regra) {
 		ADII_Regra = aDII_Regra;
 	}
 }
+
