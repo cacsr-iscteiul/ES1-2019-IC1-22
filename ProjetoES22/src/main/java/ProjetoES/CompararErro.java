@@ -17,7 +17,7 @@ public class CompararErro {
 				try { 
 					CompararErro window = new CompararErro();
 					window.frame.setVisible(true);
-				} catch (Exception e) {
+				} catch (Exception e) {  
 					e.printStackTrace();
 				}  
 			}

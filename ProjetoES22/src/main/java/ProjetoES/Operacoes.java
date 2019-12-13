@@ -67,11 +67,14 @@ public class Operacoes {
 			for(int i=0;i!=vetor1.length;i++) {
 				if(vetor1[i]==true && vetor2[i]==true ) {
 					DCI_longMehtod_plasma++;
+					//System.out.println(DCI_longMehtod_plasma);
 				}
 				else if(vetor2[i]==true && vetor1[i]==false) {
 					DII_longMehtod_plasma++;
+					//System.out.println(DII_longMehtod_plasma);
 				}
-				else if(vetor1[i]==false && vetor2[i]==false) {
+				else if(vetor1[i]==false &&
+						vetor2[i]==false) {
 					ADCI_longMehtod_plasma++;
 				}
 				else if(vetor2[i]==false && vetor1[i]==true) {

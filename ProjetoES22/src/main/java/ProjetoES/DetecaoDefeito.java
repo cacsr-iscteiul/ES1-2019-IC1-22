@@ -193,7 +193,7 @@ public class DetecaoDefeito {
 						if(vetorExcel2[a] < regra.getValorBaixo()) {
 							vetorBooleanBaixo[a] = true;
 						}else {
-							vetorBooleanBaixo[a] = false;
+		 					vetorBooleanBaixo[a] = false;
 						}
 					}
 					if(regra.getComparadorBaixo() == Comparador.IGUAL){

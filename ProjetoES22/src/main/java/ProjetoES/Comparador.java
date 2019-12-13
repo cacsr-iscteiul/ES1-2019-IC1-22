@@ -7,7 +7,7 @@ public enum  Comparador {
 //	private final char c;
 //	
 //	Comparador(char c) {
-//		this.c = c;
+//		this.c = c;  
 //	}
 //	
 //	public String toString() {

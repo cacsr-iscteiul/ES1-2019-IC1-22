@@ -57,6 +57,8 @@ public class GUI {
 	private Operacoes operacoes;
 	DefaultTableModel dtm = new DefaultTableModel();  //mudei isto para aqui
 	DetecaoDefeito d1;
+	 CompararErroGUI ceg = new CompararErroGUI();
+	
 	
 //	public GUI() {
 //		
@@ -211,6 +213,8 @@ public class GUI {
 				d1 = new DetecaoDefeito();
 				d1.detetarDefeito(regra,excel);
 				JOptionPane.showMessageDialog(null, "MetodosID  com defeito:  " + Arrays.toString(d1.getVetorFinal()));
+				
+				
 			}
 		});
 		btnAvaliarQualidadeInicial.setBounds(27, 68, 167, 23);
@@ -223,8 +227,8 @@ public class GUI {
 				operacoes.comparador_Regra(excel, d1.getVetorBooleanJunto(), regra);
 				operacoes.comparador_longMehtod_plasma(excel);
 				operacoes.comparador_longMehtod_PMD(excel);
-				JOptionPane.showMessageDialog(null, "Regra: " +operacoes.getDCI_Regra()+ "  " + "Iplasma: "+operacoes.getDCI_longMehtod_plasma() + "   " + "PMD:"+operacoes.getDCI_longMehtod_PMD() + "Regra: " + "  " + "Iplasma: " + "   " + "PMD: \t");
-
+				//System.out.println(operacoes.getDCI_longMehtod_plasma());
+				ceg.initialize(operacoes);
 			}
 		});
 		botaoCompararDefeito.setBounds(27, 114, 167, 23);
