@@ -1,15 +1,16 @@
 package TestesUnitarios;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 import ProjetoES.AndOr;
 import ProjetoES.Comparador;
 import ProjetoES.Metrica;
 import ProjetoES.Regra;
 
-class TestRegra {
+public class TestRegra {
 
 	Comparador comparadorCima = Comparador.IGUAL;
 	Comparador comparadorBaixo = Comparador.MAIOR;
@@ -22,78 +23,67 @@ class TestRegra {
 	private Regra r = new Regra (comparadorCima, comparadorBaixo, valorCima, valorBaixo, metricaCima, metricaBaixo, a);
 	
 	@Test
-	void testGetAndOr() {
-		fail("Not yet implemented");
+public void testGetAndOr() {
+		Assert.assertEquals(r.getAndOr(),a );
+	}
+	
+	@Test
+public void testSetAndOr() {
+		r.setAndOr(a);
+	}
+
+//	@Test
+//	void testRegra() {
+//		fail("Not yet implemented");
+//	}
+
+	@Test
+	public 	void testGetComparadorCima() {
+		Assert.assertEquals(r.getComparadorCima(),comparadorCima );
+	}
+	
+	@Test
+	public 	void testSetComparadorCima() {
+		r.setComparadorCima(comparadorCima);
+	}
+	
+	@Test
+	public 	void testSetComparadorBaixo() {
+		r.setComparadorBaixo(comparadorBaixo);
 	}
 
 	@Test
-	void testSetAndOr() {
-		fail("Not yet implemented");
+	public void testGetComparadorBaixo() {
+		Assert.assertEquals(r.getComparadorBaixo(),comparadorBaixo );
 	}
 
 	@Test
-	void testRegra() {
-		fail("Not yet implemented");
+	public void testGetValorCima() {
+		Assert.assertEquals(r.getValorCima(),valorCima );
+	}
+	
+	@Test
+	public void testSetValorCima() {
+		r.setValorCima(valorCima);
+	}
+	
+	@Test
+	public void testSetValorBaixo() {
+		r.setValorBaixo(valorBaixo);
 	}
 
 	@Test
-	void testGetComparadorCima() {
-		fail("Not yet implemented");
+	public void testGetValorBaixo() {
+		Assert.assertEquals(r.getValorBaixo(),valorBaixo );
 	}
 
 	@Test
-	void testSetComparadorCima() {
-		fail("Not yet implemented");
+	public void testGetMetricaCima() {
+		Assert.assertEquals(r.getMetricaCima(),metricaCima );
 	}
 
 	@Test
-	void testGetComparadorBaixo() {
-		fail("Not yet implemented");
+	public void testGetMetricaBaixo() {
+		Assert.assertEquals(r.getMetricaBaixo(),metricaBaixo );
 	}
-
-	@Test
-	void testSetComparadorBaixo() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetValorCima() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetValorCima() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetValorBaixo() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetValorBaixo() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetMetricaCima() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetMetricaCima() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetMetricaBaixo() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetMetricaBaixo() {
-		fail("Not yet implemented");
-	}
-
 }

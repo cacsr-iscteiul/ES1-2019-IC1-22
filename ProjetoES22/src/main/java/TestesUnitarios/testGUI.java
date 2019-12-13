@@ -2,6 +2,8 @@ package TestesUnitarios;
 
 import static org.junit.Assert.*;
 
+import javax.swing.JFrame;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,20 +12,21 @@ import ProjetoES.GUI;
 public class testGUI {
 	
 	private GUI gui = new GUI();
+	JFrame frmQualidadeDeDeteo = null;
 
 	@Test
 	public void testMain() {
-		fail("Not yet implemented");
+		gui.main(null);
 	}
 
 	@Test
 	public void testGetFrmQualidadeDeDeteo() {
-		fail("Not yet implemented");
+		gui.getFrmQualidadeDeDeteo();
 	}
 
 	@Test
 	public void testSetFrmQualidadeDeDeteo() {
-		fail("Not yet implemented");
+		gui.setFrmQualidadeDeDeteo(frmQualidadeDeDeteo);
 	}
 
 	@Test
@@ -35,6 +38,21 @@ public class testGUI {
 	public void testInitialize() {
 		gui.initialize();
 		Assert.assertFalse(gui.getFrmQualidadeDeDeteo().isVisible());
+	}
+	
+	@Test
+	public void testClickBotaoQualidade() {
+		gui.clickBotaoQualidade();
+	}
+	
+	@Test
+	public void testClickBotaoMostrarExcel() {
+		gui.clickBotaoMostrarExcel();
+	}
+	
+	@Test
+	public void testClickBotaoDetetarDefeito() {
+		gui.clickBotaoDetetarDefeito();
 	}
 
 }

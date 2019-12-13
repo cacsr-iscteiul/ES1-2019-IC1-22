@@ -47,6 +47,8 @@ public class GUI {
 
 	private JFrame frmQualidadeDeDeteo;
 	private final JButton btnAvaliarQualidasw = new JButton("Adicionar Regra");
+	private JButton btnMostrarExcel;
+	private JButton botaoCompararDefeito;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTable table;
@@ -105,7 +107,7 @@ public class GUI {
 		frmQualidadeDeDeteo.getContentPane().setLayout(null);
 
 
-		JButton btnMostrarExcel = new JButton("Mostrar Excel");
+		btnMostrarExcel = new JButton("Mostrar Excel");
 		btnMostrarExcel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				final JFileChooser jf = new JFileChooser();
@@ -214,8 +216,8 @@ public class GUI {
 		btnAvaliarQualidadeInicial.setBounds(27, 68, 167, 23);
 		frmQualidadeDeDeteo.getContentPane().add(btnAvaliarQualidadeInicial);
 
-		JButton btnNewButton = new JButton("Comparar Defeitos");
-		btnNewButton.addActionListener(new ActionListener() {
+		botaoCompararDefeito = new JButton("Comparar Defeitos");
+		botaoCompararDefeito.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				operacoes=new Operacoes();
 				operacoes.comparador_Regra(excel, d1.getVetorBooleanJunto(), regra);
@@ -225,8 +227,8 @@ public class GUI {
 
 			}
 		});
-		btnNewButton.setBounds(27, 114, 167, 23);
-		frmQualidadeDeDeteo.getContentPane().add(btnNewButton);
+		botaoCompararDefeito.setBounds(27, 114, 167, 23);
+		frmQualidadeDeDeteo.getContentPane().add(botaoCompararDefeito);
 
 		btnAvaliarQualidasw.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -246,6 +248,20 @@ public class GUI {
 				JOptionPane.showMessageDialog(null, "Regra Adicionada");
 			}
 		});
+		
 
 	}
+
+	public void clickBotaoQualidade() {
+		btnAvaliarQualidasw.doClick();	
+	}
+	
+	public void clickBotaoMostrarExcel() {
+		btnMostrarExcel.doClick();	
+	}
+	
+	public void clickBotaoDetetarDefeito() {
+		botaoCompararDefeito.doClick();	
+	}
+	
 }

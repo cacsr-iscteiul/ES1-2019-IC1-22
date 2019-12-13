@@ -296,6 +296,12 @@ public class DetecaoDefeito {
 	public Boolean[] getVetorBooleanJunto() {
 		return vetorBooleanJunto;
 	}
+	public void setVetorBooleanJunto(Boolean[] vetorBooleanJunto) {
+		this.vetorBooleanJunto = vetorBooleanJunto;
+	}
+	public void setVetorFinal(int[] vetorFinal) {
+		this.vetorFinal = vetorFinal;
+	}
 	public int[] getVetorFinal() {
 		return vetorFinal;
 	}

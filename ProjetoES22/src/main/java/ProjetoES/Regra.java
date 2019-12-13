@@ -2,10 +2,7 @@
 package ProjetoES;
 
 public class Regra {
-
-	public enum yoloufhdtwhqfuaydz {
-
-	}
+	
 	private Comparador comparadorCima;
 	private Comparador comparadorBaixo;
 	private int valorCima;
